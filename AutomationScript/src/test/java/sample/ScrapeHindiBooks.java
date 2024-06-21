@@ -20,15 +20,12 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class ScrapeHindiBooks 
+public class ScrapeHindiBooks extends Base_page
 {
 	
 	@Test
 	void test()
 	{
-	      WebDriver driver = WebDriverManager.chromedriver().create();
-	        driver.get("https://www.amazon.in/");
-	        driver.manage().window().maximize();
 	        WebElement searchBox = driver.findElement(By.xpath("//input[@placeholder='Search Amazon.in']"));
 	        searchBox.sendKeys("Hindi Books");
 	        searchBox.submit();
@@ -72,6 +69,6 @@ public class ScrapeHindiBooks
 	        }
 
 	        
-	        driver.quit();
+	      
 	    }
 	}
